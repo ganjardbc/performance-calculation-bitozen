@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'performance-calculation-bitozen'
+import PerformanceCalculation from 'performance-calculation-bitozen'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <PerformanceCalculation text='Modern React component module' />
       </div>
     )
   }

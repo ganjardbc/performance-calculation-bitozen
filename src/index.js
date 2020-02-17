@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import styles from './styles.css'
+import CardCC from './components/PerformanceCalculation'
 
 export default class ExampleComponent extends Component {
   static propTypes = {
@@ -14,8 +13,8 @@ export default class ExampleComponent extends Component {
     } = this.props
 
     return (
-      <div className={styles.test}>
-        Example Component: {text}
+      <div>
+        <CardCC />
       </div>
     )
   }
