@@ -1,11 +1,4 @@
 {
-  "main.css": "static/css/main.d205550c.css",
-  "main.css.map": "static/css/main.d205550c.css.map",
-  "main.js": "static/js/main.2447c407.js",
-  "main.js.map": "static/js/main.2447c407.js.map",
-  "static\\media\\NunitoSans-Regular.ttf": "static/media/NunitoSans-Regular.fb98ed17.ttf",
-  "static\\media\\Quicksand-Regular.ttf": "static/media/Quicksand-Regular.f46f486e.ttf",
-  "static\\media\\Ubuntu-Bold.ttf": "static/media/Ubuntu-Bold.b5d4adff.ttf",
-  "static\\media\\Ubuntu-Light.ttf": "static/media/Ubuntu-Light.f5a89669.ttf",
-  "static\\media\\Ubuntu-Regular.ttf": "static/media/Ubuntu-Regular.6bb9beb4.ttf"
+  "main.js": "static/js/main.c91bac13.js",
+  "main.js.map": "static/js/main.c91bac13.js.map"
 }
