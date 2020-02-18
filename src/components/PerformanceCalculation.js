@@ -1,36 +1,55 @@
 import React, { Component } from 'react'
 
-let payload = {
-    "result": {
-        "weight": "60%",
-        "score": "0",
-        "totalScore": "0"
+let defaultPayload = {
+    "midPayload": {
+        "result": {
+            "weight": "",
+            "score": "",
+            "totalScore": ""
+        },
+        "process": {
+            "weight": "",
+            "score": "",
+            "totalScore": ""
+        },
+        "paMidYear": "",
+        "gradePerformance": ""
     },
-    "process": {
-        "weight": "40%",
-        "score": "0",
-        "totalScore": "0"
-    },
-    "paMidYear": "0",
-    "gradePerformance": "K",
+    "finalPayload": {
+        "result": {
+            "weight": "",
+            "score": "",
+            "totalScore": ""
+        },
+        "process": {
+            "weight": "",
+            "score": "",
+            "totalScore": ""
+        },
+        "paMidYear": "",
+        "gradePerformance": ""
+    }
 }
 
-class Cards extends Component {
+class Performance extends Component {
 
-    constructor () {
-      super()
-      this.state = {
-          midPayload: payload,
-          finalPayload: payload
-      }
-    }
-
-    componentDidMount() {
-        console.log(this.state.midPayload)
+    constructor (props) {
+        super(props)
+        this.state = {
+            payload: {
+                ...defaultPayload,
+                midPayload: {
+                    ...props.payload.midPayload
+                },
+                finalPayload: {
+                    ...props.payload.finalPayload
+                }
+            }
+        }
     }
 
     renderContentMid () {
-        let {midPayload} = this.state
+        let {midPayload} = this.state.payload
         return (
             <div>
                 <div className="display-flex-normal border-bottom">
@@ -59,7 +78,10 @@ class Cards extends Component {
                     </div>
                     <div className="display-flex-normal width width-full">
                         <div className="width width-full">
-                            <input type="text" value={midPayload.result.weight} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.result.weight}
+                            </div>
+                            {/* <input type="text" value={midPayload.result.weight} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -69,10 +91,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={midPayload.result.score} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.result.score}
+                            </div>
+                            {/* <input type="text" value={midPayload.result.score} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -82,10 +107,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={midPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.result.totalScore}
+                            </div>
+                            {/* <input type="text" value={midPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -95,7 +123,7 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                     </div>
                 </div>
@@ -107,7 +135,10 @@ class Cards extends Component {
                     </div>
                     <div className="display-flex-normal width width-full">
                         <div className="width width-full">
-                            <input type="text" value={midPayload.process.weight} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.process.weight}
+                            </div>
+                            {/* <input type="text" value={midPayload.process.weight} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -117,10 +148,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={midPayload.process.score} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.process.score}
+                            </div>
+                            {/* <input type="text" value={midPayload.process.score} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -130,10 +164,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={midPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {midPayload.process.totalScore}
+                            </div>
+                            {/* <input type="text" value={midPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
@@ -143,7 +180,7 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                     </div>
                 </div>
@@ -154,14 +191,17 @@ class Cards extends Component {
                         </div>
                     </div>
                     <div className="width width-full border-left">
-                        <input type="text" value={midPayload.paMidYear} className="txt txt-full" onChange={(e) => {
+                        <div className="txt-site txt-11 txt-main txt-center post-center">
+                            {midPayload.paMidYear}
+                        </div>
+                        {/* <input type="text" value={midPayload.paMidYear} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
                                         paMidYear: e.target.value
                                     }
                                 })
-                            }} />
+                            }} /> */}
                     </div>
                 </div>
                 <div className="display-flex-normal">
@@ -171,14 +211,17 @@ class Cards extends Component {
                         </div>
                     </div>
                     <div className="width width-full border-left">
-                        <input type="text" value={midPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
+                        <div className="txt-site txt-11 txt-main txt-center post-center">
+                            {midPayload.gradePerformance}
+                        </div>
+                        {/* <input type="text" value={midPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     midPayload: {
                                         ...this.state.midPayload,
                                         gradePerformance: e.target.value
                                     }
                                 })
-                            }} />
+                            }} /> */}
                     </div>
                 </div>
             </div>
@@ -186,7 +229,7 @@ class Cards extends Component {
     }
 
     renderContentFinal () {
-        let {finalPayload} = this.state
+        let {finalPayload} = this.state.payload
         return (
             <div>
                 <div className="display-flex-normal border-bottom">
@@ -215,7 +258,10 @@ class Cards extends Component {
                     </div>
                     <div className="display-flex-normal width width-full">
                         <div className="width width-full">
-                            <input type="text" value={finalPayload.result.weight} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.result.weight}
+                            </div>
+                            {/* <input type="text" value={finalPayload.result.weight} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -225,10 +271,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={finalPayload.result.score} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.result.score}
+                            </div>
+                            {/* <input type="text" value={finalPayload.result.score} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -238,10 +287,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={finalPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.result.totalScore}
+                            </div>
+                            {/* <input type="text" value={finalPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -251,7 +303,7 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                     </div>
                 </div>
@@ -263,7 +315,10 @@ class Cards extends Component {
                     </div>
                     <div className="display-flex-normal width width-full">
                         <div className="width width-full">
-                            <input type="text" value={finalPayload.process.weight} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.process.weight}
+                            </div>
+                            {/* <input type="text" value={finalPayload.process.weight} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -273,10 +328,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={finalPayload.process.score} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.process.score}
+                            </div>
+                            {/* <input type="text" value={finalPayload.process.score} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -286,10 +344,13 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                         <div className="width width-full border-left">
-                            <input type="text" value={finalPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
+                            <div className="txt-site txt-11 txt-main txt-center post-center">
+                                {finalPayload.process.totalScore}
+                            </div>
+                            {/* <input type="text" value={finalPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
@@ -299,7 +360,7 @@ class Cards extends Component {
                                         }
                                     }
                                 })
-                            }} />
+                            }} /> */}
                         </div>
                     </div>
                 </div>
@@ -310,14 +371,17 @@ class Cards extends Component {
                         </div>
                     </div>
                     <div className="width width-full border-left">
-                        <input type="text" value={finalPayload.paMidYear} className="txt txt-full" onChange={(e) => {
+                        <div className="txt-site txt-11 txt-main txt-center post-center">
+                            {finalPayload.paMidYear}
+                        </div>
+                        {/* <input type="text" value={finalPayload.paMidYear} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
                                         paMidYear: e.target.value
                                     }
                                 })
-                            }} />
+                            }} /> */}
                     </div>
                 </div>
                 <div className="display-flex-normal">
@@ -327,14 +391,17 @@ class Cards extends Component {
                         </div>
                     </div>
                     <div className="width width-full border-left">
-                        <input type="text" value={finalPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
+                        <div className="txt-site txt-11 txt-main txt-center post-center">
+                            {finalPayload.gradePerformance}
+                        </div>
+                        {/* <input type="text" value={finalPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
                                 this.setState({
                                     finalPayload: {
                                         ...this.state.finalPayload,
                                         gradePerformance: e.target.value
                                     }
                                 })
-                            }} />
+                            }} /> */}
                     </div>
                 </div>
             </div>
@@ -368,4 +435,4 @@ class Cards extends Component {
 
 }
 
-export default Cards
+export default Performance

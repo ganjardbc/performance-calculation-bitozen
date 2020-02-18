@@ -9,12 +9,12 @@ export default class ExampleComponent extends Component {
 
   render() {
     const {
-      text
+      payload
     } = this.props
 
     return (
       <div>
-        <CardCC />
+        <CardCC payload={payload} />
       </div>
     )
   }
