@@ -47,6 +47,14 @@ class Performance extends Component {
             }
         }
     }
+    
+    componentDidUpdate() {
+        if (this.props.payload !== this.state.payload) {
+            this.setState({
+                payload: this.props.payload
+            })
+        }
+    }
 
     renderContentMid () {
         let {midPayload} = this.state.payload
@@ -410,7 +418,7 @@ class Performance extends Component {
 
     render () {
         return (
-            <div className="card">
+            <div className="card" style={{width: '100%', margin: 0}}>
                 <div className="display-flex-normal">
                     <div className="width width-full">
                         <div className="padding-15px border-bottom">
