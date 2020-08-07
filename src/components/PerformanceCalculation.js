@@ -375,12 +375,12 @@ class Performance extends Component {
                 <div className="display-flex-normal border-bottom">
                     <div className="width width-200px">
                         <div className="padding-15px">
-                            <div className="txt-site txt-bold txt-11 txt-main txt-center">PA Mid Year</div>
+                            <div className="txt-site txt-bold txt-11 txt-main txt-center">PA Full Year</div>
                         </div>
                     </div>
                     <div className="width width-full border-left">
                         <div className="txt-site txt-11 txt-main txt-center post-center">
-                            {finalPayload.paMidYear}
+                            {finalPayload.paFullYear}
                         </div>
                         {/* <input type="text" value={finalPayload.paMidYear} className="txt txt-full" onChange={(e) => {
                                 this.setState({

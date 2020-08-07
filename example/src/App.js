@@ -28,7 +28,7 @@ let payload = {
           "score": "0",
           "totalScore": "0"
       },
-      "paMidYear": "0",
+      "paFullYear": "0",
       "gradePerformance": "K",
   }
 }
