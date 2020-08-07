@@ -26,7 +26,7 @@ let defaultPayload = {
             "score": "",
             "totalScore": ""
         },
-        "paMidYear": "",
+        "paFullYear": "",
         "gradePerformance": ""
     }
 }
