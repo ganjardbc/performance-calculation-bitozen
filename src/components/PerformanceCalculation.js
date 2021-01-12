@@ -2,30 +2,50 @@ import React, { Component } from 'react'
 
 let defaultPayload = {
     "midPayload": {
-        "result": {
-            "weight": "",
-            "score": "",
-            "totalScore": ""
-        },
-        "process": {
-            "weight": "",
-            "score": "",
-            "totalScore": ""
-        },
+        "rows": [
+            {
+                "label": "label 1",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 2",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 3",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            }
+        ],
         "paMidYear": "",
         "gradePerformance": ""
     },
     "finalPayload": {
-        "result": {
-            "weight": "",
-            "score": "",
-            "totalScore": ""
-        },
-        "process": {
-            "weight": "",
-            "score": "",
-            "totalScore": ""
-        },
+        "rows": [
+            {
+                "label": "label 1",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 2",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 3",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            }
+        ],
         "paFullYear": "",
         "gradePerformance": ""
     }
@@ -78,120 +98,36 @@ class Performance extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="display-flex-normal border-bottom">
-                    <div className="width width-200px border-right">
-                        <div className="padding-15px">
-                            <div className="txt-site txt-thin txt-11 txt-main txt-center">Hasil Kerja</div>
-                        </div>
-                    </div>
-                    <div className="display-flex-normal width width-full">
-                        <div className="width width-full">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.result.weight}
+                {midPayload && midPayload.rows && midPayload.rows.map((dt, index) => {
+                    return (
+                        <div key={index} className="display-flex-normal border-bottom">
+                            <div className="width width-200px border-right">
+                                <div className="padding-15px">
+                                    <div className="txt-site txt-thin txt-11 txt-main txt-center">
+                                        {dt.label}
+                                    </div>
+                                </div>
                             </div>
-                            {/* <input type="text" value={midPayload.result.weight} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        result: {
-                                            ...this.state.midPayload.result,
-                                            weight: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.result.score}
+                            <div className="display-flex-normal width width-full">
+                                <div className="width width-full">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.weight}
+                                    </div>
+                                </div>
+                                <div className="width width-full border-left">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.score}
+                                    </div>
+                                </div>
+                                <div className="width width-full border-left">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.totalScore}
+                                    </div>
+                                </div>
                             </div>
-                            {/* <input type="text" value={midPayload.result.score} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        result: {
-                                            ...this.state.midPayload.result,
-                                            score: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
                         </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.result.totalScore}
-                            </div>
-                            {/* <input type="text" value={midPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        result: {
-                                            ...this.state.midPayload.result,
-                                            totalScore: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                    </div>
-                </div>
-                <div className="display-flex-normal border-bottom">
-                    <div className="width width-200px border-right">
-                        <div className="padding-15px">
-                            <div className="txt-site txt-thin txt-11 txt-main txt-center">Proses Kerja</div>
-                        </div>
-                    </div>
-                    <div className="display-flex-normal width width-full">
-                        <div className="width width-full">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.process.weight}
-                            </div>
-                            {/* <input type="text" value={midPayload.process.weight} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        process: {
-                                            ...this.state.midPayload.process,
-                                            weight: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.process.score}
-                            </div>
-                            {/* <input type="text" value={midPayload.process.score} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        process: {
-                                            ...this.state.midPayload.process,
-                                            score: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {midPayload.process.totalScore}
-                            </div>
-                            {/* <input type="text" value={midPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        process: {
-                                            ...this.state.midPayload.process,
-                                            totalScore: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                    </div>
-                </div>
+                    )
+                })}
                 <div className="display-flex-normal border-bottom">
                     <div className="width width-200px">
                         <div className="padding-15px">
@@ -202,14 +138,6 @@ class Performance extends Component {
                         <div className="txt-site txt-11 txt-main txt-center post-center">
                             {midPayload.paMidYear}
                         </div>
-                        {/* <input type="text" value={midPayload.paMidYear} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        paMidYear: e.target.value
-                                    }
-                                })
-                            }} /> */}
                     </div>
                 </div>
                 <div className="display-flex-normal">
@@ -222,14 +150,6 @@ class Performance extends Component {
                         <div className="txt-site txt-11 txt-main txt-center post-center">
                             {midPayload.gradePerformance}
                         </div>
-                        {/* <input type="text" value={midPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    midPayload: {
-                                        ...this.state.midPayload,
-                                        gradePerformance: e.target.value
-                                    }
-                                })
-                            }} /> */}
                     </div>
                 </div>
             </div>
@@ -258,120 +178,36 @@ class Performance extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="display-flex-normal border-bottom">
-                    <div className="width width-200px border-right">
-                        <div className="padding-15px">
-                            <div className="txt-site txt-thin txt-11 txt-main txt-center">Hasil Kerja</div>
-                        </div>
-                    </div>
-                    <div className="display-flex-normal width width-full">
-                        <div className="width width-full">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.result.weight}
+                {finalPayload && finalPayload.rows && finalPayload.rows.map((dt, index) => {
+                    return (
+                        <div key={index} className="display-flex-normal border-bottom">
+                            <div className="width width-200px border-right">
+                                <div className="padding-15px">
+                                    <div className="txt-site txt-thin txt-11 txt-main txt-center">
+                                        {dt.label}
+                                    </div>
+                                </div>
                             </div>
-                            {/* <input type="text" value={finalPayload.result.weight} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        result: {
-                                            ...this.state.finalPayload.result,
-                                            weight: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.result.score}
+                            <div className="display-flex-normal width width-full">
+                                <div className="width width-full">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.weight}
+                                    </div>
+                                </div>
+                                <div className="width width-full border-left">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.score}
+                                    </div>
+                                </div>
+                                <div className="width width-full border-left">
+                                    <div className="txt-site txt-11 txt-main txt-center post-center">
+                                        {dt.totalScore}
+                                    </div>
+                                </div>
                             </div>
-                            {/* <input type="text" value={finalPayload.result.score} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        result: {
-                                            ...this.state.finalPayload.result,
-                                            score: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
                         </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.result.totalScore}
-                            </div>
-                            {/* <input type="text" value={finalPayload.result.totalScore} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        result: {
-                                            ...this.state.finalPayload.result,
-                                            totalScore: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                    </div>
-                </div>
-                <div className="display-flex-normal border-bottom">
-                    <div className="width width-200px border-right">
-                        <div className="padding-15px">
-                            <div className="txt-site txt-thin txt-11 txt-main txt-center">Proses Kerja</div>
-                        </div>
-                    </div>
-                    <div className="display-flex-normal width width-full">
-                        <div className="width width-full">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.process.weight}
-                            </div>
-                            {/* <input type="text" value={finalPayload.process.weight} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        process: {
-                                            ...this.state.finalPayload.process,
-                                            weight: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.process.score}
-                            </div>
-                            {/* <input type="text" value={finalPayload.process.score} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        process: {
-                                            ...this.state.finalPayload.process,
-                                            score: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                        <div className="width width-full border-left">
-                            <div className="txt-site txt-11 txt-main txt-center post-center">
-                                {finalPayload.process.totalScore}
-                            </div>
-                            {/* <input type="text" value={finalPayload.process.totalScore} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        process: {
-                                            ...this.state.finalPayload.process,
-                                            totalScore: e.target.value
-                                        }
-                                    }
-                                })
-                            }} /> */}
-                        </div>
-                    </div>
-                </div>
+                    )
+                })}
                 <div className="display-flex-normal border-bottom">
                     <div className="width width-200px">
                         <div className="padding-15px">
@@ -382,14 +218,6 @@ class Performance extends Component {
                         <div className="txt-site txt-11 txt-main txt-center post-center">
                             {finalPayload.paFullYear}
                         </div>
-                        {/* <input type="text" value={finalPayload.paMidYear} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        paMidYear: e.target.value
-                                    }
-                                })
-                            }} /> */}
                     </div>
                 </div>
                 <div className="display-flex-normal">
@@ -402,14 +230,6 @@ class Performance extends Component {
                         <div className="txt-site txt-11 txt-main txt-center post-center">
                             {finalPayload.gradePerformance}
                         </div>
-                        {/* <input type="text" value={finalPayload.gradePerformance} className="txt txt-full" onChange={(e) => {
-                                this.setState({
-                                    finalPayload: {
-                                        ...this.state.finalPayload,
-                                        gradePerformance: e.target.value
-                                    }
-                                })
-                            }} /> */}
                     </div>
                 </div>
             </div>
