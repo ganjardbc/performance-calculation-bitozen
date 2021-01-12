@@ -17,10 +17,61 @@ import React, { Component } from 'react'
 
 import MyComponent from 'performance-calculation-bitozen'
 
+let defaultPayload = {
+    "midPayload": {
+        "rows": [
+            {
+                "label": "label 1",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 2",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 3",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            }
+        ],
+        "paMidYear": "",
+        "gradePerformance": ""
+    },
+    "finalPayload": {
+        "rows": [
+            {
+                "label": "label 1",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 2",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            },
+            {
+                "label": "label 3",
+                "weight": "0%",
+                "score": "0",
+                "totalScore": "0"
+            }
+        ],
+        "paFullYear": "",
+        "gradePerformance": ""
+    }
+}
+
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <MyComponent payload={defaultPayload} />
     )
   }
 }
